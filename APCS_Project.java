@@ -3,7 +3,6 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         Unweighted_Graph g1 = new Unweighted_Graph();
-        System.out.println(g1.prod(g1.edges, g1.edges));
         g1.num_paths();
     }
 }
@@ -46,7 +45,7 @@ class Graph {
 		// Adds edges through user input
 
 		while (true) {
-			System.out.println("Enter first vertex (enter 0 to end): ");
+			System.out.println("\nEnter first vertex (enter 0 to end): ");
 			input = s.nextLine();
 			v1 = Integer.parseInt(input);
 
@@ -55,36 +54,36 @@ class Graph {
 			}
 
 			if (v1 < 1 || v1 > this.num_vertices) {
-				System.out.println("Vertex must be between 1 and " + num_vertices);
+				System.out.println("\nVertex must be between 1 and " + num_vertices);
 				continue;
 			}
 
-			System.out.println("Enter second vertex: ");
+			System.out.println("\nEnter second vertex: ");
 			input = s.nextLine();
 			v2 = Integer.parseInt(input);
 
 			if (v2 < 1 || v2 > this.num_vertices) {
-				System.out.println("Vertex must be between 1 and " + num_vertices);
+				System.out.println("\nVertex must be between 1 and " + num_vertices);
 				continue;
 			}
 
 			if (v1 == v2) {
-				System.out.println("The vertices must be different");
+				System.out.println("\nThe vertices must be different");
 				continue;
 			}
 
 			if (w.length == 0) {
-				System.out.println("Enter edge length (positive integer less than 1000000000): ");
+				System.out.println("\nEnter edge length (positive integer less than 1000000000): ");
 				input = s.nextLine();
 				l = Integer.parseInt(input);
 
 				if (l < 1) {
-					System.out.println("Must be positive integer");
+					System.out.println("\nMust be positive integer");
 					continue;
 				}
 
 				if (l > 1000000000) {
-					System.out.println("Must be less than 1000000000");
+					System.out.println("\nMust be less than 1000000000");
 					continue;
 				}
 			}
@@ -95,7 +94,7 @@ class Graph {
 			this.edges.get(v1-1).set(v2-1, l);
 			this.edges.get(v2-1).set(v1-1, l);
 
-			System.out.println("This is the current edge matrix: ");
+			System.out.println("\nThis is the current edge matrix: ");
 			this.print_edge();
 		}
 	}
@@ -121,7 +120,7 @@ class Graph {
 		while (true){
 			Scanner s = new Scanner(System.in);
 
-			System.out.println("Enter starting vertex (enter 0 to end): ");
+			System.out.println("\nEnter starting vertex (enter 0 to end): ");
 			input = s.nextLine();
 			start = Integer.parseInt(input);
 
@@ -130,21 +129,21 @@ class Graph {
 			}
 
 			if (start < 1 || start > this.num_vertices) {
-				System.out.println("Vertex must be between 1 and " + num_vertices);
+				System.out.println("\nVertex must be between 1 and " + num_vertices);
 				continue;
 			}
 
-			System.out.println("Enter ending vertex: ");
+			System.out.println("\nEnter ending vertex: ");
 			input = s.nextLine();
 			end = Integer.parseInt(input);
 
 			if (end < 1 || end > this.num_vertices) {
-				System.out.println("Vertex must be between 1 and " + num_vertices);
+				System.out.println("\nVertex must be between 1 and " + num_vertices);
 				continue;
 			}
 
 			if (start == end) {
-				System.out.println("Start and end vertices must be different");
+				System.out.println("\nStart and end vertices must be different");
 				continue;
 			}
 
@@ -297,7 +296,7 @@ class Unweighted_Graph extends Graph {
 		while (true){
 			Scanner s = new Scanner(System.in);
 
-			System.out.println("Enter starting vertex (enter 0 to end): ");
+			System.out.println("\nEnter starting vertex (enter 0 to end): ");
 			input = s.nextLine();
 			start = Integer.parseInt(input);
 
@@ -306,40 +305,40 @@ class Unweighted_Graph extends Graph {
 			}
 
 			if (start < 1 || start > this.num_vertices) {
-				System.out.println("Vertex must be between 1 and " + num_vertices);
+				System.out.println("\nVertex must be between 1 and " + num_vertices);
 				continue;
 			}
 
-			System.out.println("Enter ending vertex: ");
+			System.out.println("\nEnter ending vertex: ");
 			input = s.nextLine();
 			end = Integer.parseInt(input);
 
 			if (end < 1 || end > this.num_vertices) {
-				System.out.println("Vertex must be between 1 and " + num_vertices);
+				System.out.println("\nVertex must be between 1 and " + num_vertices);
 				continue;
 			}
 
 			if (start == end) {
-				System.out.println("Start and end vertices must be different");
+				System.out.println("\nStart and end vertices must be different");
 				continue;
 			}
 
-			System.out.println("Enter number of steps (positive integer below 20): ");
+			System.out.println("\nEnter number of steps (positive integer below 20): ");
 			input = s.nextLine();
 			steps = Integer.parseInt(input);
 
 			if (steps < 1) {
-				System.out.println("Must be positive integer");
+				System.out.println("\nMust be positive integer");
 				continue;
 			}
 
 			if (steps > 20) {
-				System.out.println("Must be below 20");
+				System.out.println("\nMust be below 20");
 				continue;
 			}
 
 
-			System.out.println("Number of paths: " + this.num_paths_once(start, end, steps));
+			System.out.println("\nNumber of paths: " + this.num_paths_once(start, end, steps));
 		}
 	}
 
