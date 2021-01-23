@@ -178,6 +178,8 @@ class Graph {
 		while (true){
 			Scanner s = new Scanner(System.in);
 
+			System.out.println("\nDijkstra's Algorithm");
+
 			System.out.println("\nEnter starting vertex (enter 0 to end): ");
 			input = s.nextLine();
 			start = Integer.parseInt(input);
@@ -353,6 +355,8 @@ class Unweighted_Graph extends Graph {
 
 		while (true){
 			Scanner s = new Scanner(System.in);
+
+			System.out.println("\nNum_Paths Algorithm");
 
 			System.out.println("\nEnter starting vertex (enter 0 to end): ");
 			input = s.nextLine();
