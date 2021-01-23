@@ -4,13 +4,13 @@ Author: Paul Gutkovich
 
 Date: 1/22/21
 
-Usage: 
+Usage: 'java apcs_project.java', then follow the prompts
 
-java apcs_project.java
 In the graph contructor, you must first enter the number of vertices, and then there is a loop to generate edges.
 You must input the first and second vertices, and the edge weight (if it is a regular graph, in Unweighted_Graph all weights are equal to 1).
-After the graph is constructed, you can run dijkstra's algorithm (you must input start and end vertices) and, if it is an unweighted graph,
-the num_paths algorithm, which calculates the number of ways to get from one vertex to another in a given number of steps.
+After the graph is constructed, you can run dijkstra's algorithm to find the shortest path between start and end vertices
+(you must input both) and, if it is an unweighted graph, the num_paths algorithm, which calculates the number of ways to get
+from one vertex to another in a given number of steps.
 
 Knowledge demonstrated:
 
@@ -24,18 +24,18 @@ Graph class is a regular graph.
 
 The constructor uses user input from the command prompt to build the edge matrix of the graph.
 
-This classes fields are num_graphs, num_vertices, and edges.
+This classes fields are 'num_graphs', 'num_vertices', and 'edges'.
 
-- num_graphs is a static variable representing the number of graph instances. It increases by 1 every time a new graph instance is created.
-- num_vertices is an integer representing the number of vertices the graph has.
-- edges is a two dimensional arraylist that represents the edge matrix of the graph.
+- 'num_graphs' is a static variable representing the number of graph instances. It increases by 1 every time a new graph instance is created.
+- 'num_vertices' is an integer representing the number of vertices the graph has.
+- 'edges' is a two dimensional arraylist that represents the edge matrix of the graph.
 
-The class methods are contains, print_edge, dijkstra, and dijkstra_once.
+The class methods are 'contains', 'print_edge', 'dijkstra', and 'dijkstra_once'.
 
-- contains is a helper function that tells if a given arraylist contains a given element
-- print_edge prints the edge matrix into the console
-- dijkstra is a loop that gets user input and then runs dijkstra_once based on it
-- dijkstra_once is an implementation of dijkstra's algorithm
+- 'contains' is a helper function that tells if a given arraylist contains a given element
+- 'print_edge' prints the edge matrix into the console
+- 'dijkstra' is a loop that gets user input and then runs dijkstra_once based on it
+- 'dijkstra_once' is an implementation of dijkstra's algorithm
 
 Unweighted_Graph inherits Graph. It is a graph where the edges have no weights (all weights are equal to 1)
 
@@ -43,14 +43,14 @@ Its constructor is the Graph constructor but it uses varargs to indicate that th
 
 This class does not contain any new fields.
 
-This classes methods are row, column, dot, prod, set_mat, num_paths, num_paths_once
+This classes methods are 'row', 'column', 'dot', 'prod', 'set_mat', 'num_paths', 'num_paths_once'
 
-- row gets a given row of a given matrix (2d arraylist)
-- column gets a given column of a given matrix
-- dot computes the dot product of two vectors (1d arraylist)
-- prod computes the matri product of two matrices
-- num_paths is a loop that gets user input and then runs num_paths_once based on it
-- num_paths_once is an algorithm that finds the number of paths from one vertex to another in a given number of steps
+- 'row' gets a given row of a given matrix (2d arraylist)
+- 'column' gets a given column of a given matrix
+- 'dot' computes the dot product of two vectors (1d arraylist)
+- 'prod' computes the matri product of two matrices
+- 'num_paths' is a loop that gets user input and then runs num_paths_once based on it
+- 'num_paths_once' is an algorithm that finds the number of paths from one vertex to another in a given number of steps
 
 */
 
