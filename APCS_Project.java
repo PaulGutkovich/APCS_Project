@@ -417,7 +417,7 @@ class Unweighted_Graph extends Graph {
 			this.set_mat(paths, this.prod(paths, this.edges));
 		}
 
-		return paths.get(start).get(end);
+		return paths.get(start-1).get(end-1);
 	}
 
 	// Function to set values of one matrix to values of another
