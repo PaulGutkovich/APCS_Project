@@ -1,13 +1,15 @@
+// Part 4a
 class Demo {
+	// Part 4a
 	public static void main(String[] args) {
 		SuperArray x = new SuperArray();
 
 		SuperArray y = new SuperArray(2);
 		y.add("a");
 		y.add("b");
-		y.toStrin();
+		y.tostring();
 		y.add(1, "c");
-		y.toStrin();
+		y.tostring();
 		y.remove(2);
 
 		SuperArray z = new SuperArray(7);
@@ -17,9 +19,10 @@ class Demo {
 
 		System.out.println(z.equals(y));
 
-		zip(y, z).toStrin();
+		zip(y, z).tostring();
 	}
 
+	// Part 4b
 	public static void removeDuplicates(SuperArray s) {
 		int i = 0;
 		int last_index;
@@ -43,6 +46,7 @@ class Demo {
 		}
 	}
 
+	// Part 4c
 	public static SuperArray findOverlap(SuperArray a, SuperArray b) {
 		int s = a.size();
 		String e;
@@ -58,6 +62,7 @@ class Demo {
 		return overlap;
 	}
 
+	// Part 4d (Written 4e in email)
 	public static SuperArray zip(SuperArray a, SuperArray b) {
 		int m;
 		SuperArray zipped = new SuperArray();
@@ -90,13 +95,16 @@ class Demo {
 }
 
 class SuperArray {
+	// Part 1a
 	private String[] data;
 	private int size;
 
+	// Part 1b
 	public SuperArray() {
 		data = new String[10];
 	}
 
+	// Part 2f, 3a
 	public SuperArray(int initialCapacity) {
 		if (initialCapacity < 0) {
 			throw new IllegalArgumentException("Initial capacity must be positive");
@@ -105,10 +113,12 @@ class SuperArray {
 		data = new String[initialCapacity];
 	}
 
+	// Part 1c
 	public int size() {
 		return this.size;
 	}
 
+	// Part 1d, 2b
 	public boolean add(String element) {
 		if (size == data.length) {
 			resize();
@@ -120,6 +130,7 @@ class SuperArray {
 		return true;
 	}
 
+	// Part 2g, 3d
 	public void add(int index, String element) {
 		if (index < 0 || index > size) {
 			throw new IndexOutOfBoundsException();
@@ -147,6 +158,7 @@ class SuperArray {
 		size++;
 	}
 
+	// Part 2h, 3e
 	public String remove(int index) {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
@@ -170,6 +182,7 @@ class SuperArray {
 		return a;
 	}
 
+	// Part 1e, 3b
 	public String get(int index) {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
@@ -178,6 +191,7 @@ class SuperArray {
 		return data[index];
 	}
 
+	// Part 1f, 3c
 	public String set(int index, String element) {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
@@ -188,6 +202,7 @@ class SuperArray {
 		return v;
 	}
 
+	// Part 2i
 	public int indexOf(String s) {
 		for (int i=0; i<size; i++) {
 			if (data[i] == s) {
@@ -198,6 +213,7 @@ class SuperArray {
 		return -1;
 	}
 
+	// Part 2j
 	public int lastIndexOf(String value) {
 		int last_index = -1;
 		for (int i=0; i<size; i++) {
@@ -209,6 +225,7 @@ class SuperArray {
 		return last_index;
 	}
 
+	// Part 2k
 	public String[] toArray() {
 		String[] arr = new String[size];
 		for (int i=0; i<size; i++) {
@@ -218,6 +235,7 @@ class SuperArray {
 		return arr;
 	}
 
+	// Part 2l
 	public boolean equals(SuperArray other) {
 		if (size != other.size()) {
 			return false;
@@ -232,7 +250,8 @@ class SuperArray {
 		return true;
 	}
 
-	public void toStrin() {
+	// Part 1g
+	public void tostring() {
 		System.out.printf("[");
 		if (size > 0) {
 			System.out.printf(data[0]);
@@ -244,6 +263,7 @@ class SuperArray {
 		System.out.printf("]");
 	}
 
+	// Part 2a
 	private void resize() {
 		String[] temp = new String[2*data.length+1];
 		for (int i=0; i<size; i++) {
@@ -258,10 +278,12 @@ class SuperArray {
 		data = new String[10];
 	}
 
+	// Part 2d
 	public boolean isEmpty() {
 		return (size==0);
 	}
 
+	// Part 2e
 	public boolean contains(String s) {
 		for (String a : data) {
 			if (a==s) {
