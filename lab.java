@@ -11,6 +11,13 @@ class Demo {
 		y.add(1, "c");
 		y.tostring();
 		y.remove(2);
+		y.tostring();
+		y.clear();
+		y.tostring();
+		System.out.println("\n"+y.isEmpty());
+		y.add("a");
+		y.add("b");
+		y.add("c");
 
 		SuperArray z = new SuperArray(7);
 		z.add("d");
@@ -252,7 +259,7 @@ class SuperArray {
 
 	// Part 1g
 	public void tostring() {
-		System.out.printf("[");
+		System.out.printf("\n[");
 		if (size > 0) {
 			System.out.printf(data[0]);
 		}
