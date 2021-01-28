@@ -50,7 +50,7 @@ public class Main {
 		System.out.print(l1);
 		l1.remove(2);
 		System.out.print(l1);
-		l1.set(3, "ewwew");
+		l1.set(3, "f");
 		System.out.print(l1);
 		l1.remove(0);
 		System.out.print(l1);
@@ -59,14 +59,48 @@ public class Main {
 		l2.add("1");
 		l2.add("2");
 		l2.add("3");
+		System.out.println(l2);
+		l2.remove(1);
+		l2.remove(0);
+		l2.remove(0);
+		System.out.println(l2);
+		l2.add("1");
+		l2.add("2");
+		l2.add("3");
+		System.out.println(l2);
+
 
 		l1.extend(l2);
 
 		System.out.println(l1);
 		System.out.println(l2);
+
+		l2.add("1");
+		l2.add("2");
+		l2.add("3");
+		System.out.println(l2);
 	}
 }
 
+/*
+Output:
+
+[a, b, c, d, e]
+[a, q, c, d, e]
+[a, q, d, e]
+[a, q, d, f]
+[q, d, f]
+[1, 2, 3]
+[]
+
+[1, 2, 3]
+
+[q, d, f, 1, 2, 3]
+[]
+
+[1, 2, 3]
+
+*/
 
 public class Node {
 	private String data;
